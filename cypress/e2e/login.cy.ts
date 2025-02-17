@@ -1,13 +1,9 @@
+import loginPage from "../pages/loginPage";
+
 describe('Login', () => {
-
-  beforeEach(() => {
-    cy.visit('/_/#/login');
-  });
-
+  
   it('user can sign-in', () => {
-    cy.get('input[type="email"]').type('hello@fake.com');
-    cy.get('input[type="password"]').type('1234567890');
-    cy.get('button[type="submit"]').click();
+    loginPage.login('hello@fake.com', '1234567890');
     cy.url().should('include', '/collections')
   });
 
@@ -26,9 +22,7 @@ describe('Login', () => {
         }
       }
     )
-    cy.get('input[type="email"]').type('asd@asd.com');
-    cy.get('input[type="password"]').type('123');
-    cy.get('button[type="submit"]').click();
+    loginPage.login('asd@asd.com', '123');
     cy.contains('Invalid login credentials').should('be.visible')
   });
 
