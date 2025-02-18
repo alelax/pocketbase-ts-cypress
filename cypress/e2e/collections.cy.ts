@@ -3,6 +3,7 @@ import collectionsPage from "../pages/collectionsPage";
 
 describe('Collections', () => {
   beforeEach(() => {
+    cy.viewport('iphone-8', 'landscape')
     loginPage.login('hello@fake.com', '1234567890')
   })
 
