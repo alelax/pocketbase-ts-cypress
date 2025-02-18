@@ -19,6 +19,7 @@ describe('Collections', () => {
 
     cy.contains('Successfully created collection').should('be.visible');
 
+
   });
 
   it('delete a collection', () => {
@@ -28,4 +29,9 @@ describe('Collections', () => {
     cy.contains('Successfully deleted').should('be.visible');
 
   })
+
+
+  it('take a screenshot', () => {
+    cy.screenshot('collection-created', { overwrite: true, capture: 'runner' });
+  });
 });

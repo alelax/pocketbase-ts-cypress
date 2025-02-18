@@ -6,6 +6,7 @@ class LoginPage {
   }
 
   login(email: string, password: string) {
+    console.log('CYPRESS ENV', Cypress.env('APIKEY'));
     cy.visit('/_/#/login');
     if (!email || !password) return
     this.elements.emailInput().type(email);
