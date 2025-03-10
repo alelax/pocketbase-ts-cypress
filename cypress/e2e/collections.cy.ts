@@ -1,5 +1,7 @@
 import loginPage from "../pages/loginPage";
 import collectionsPage from "../pages/collectionsPage";
+import { slowCypressDown } from 'cypress-slow-down';
+slowCypressDown(1000);
 
 describe('Collections', () => {
   beforeEach(() => {
